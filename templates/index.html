@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<script type="text/javascript", src="{{url_for('static',filename='javascript/test.js')}}">
+</script>
+<!-- <script src="{{ url_for('static', filename='javascript/test.js') }}" defer></script> -->
+</head>
+
+<body>
+    <div class="calculate">
+        <h1>Calculate average marks</h1>
+        <form action="{{ url_for('form')}}" method="post">
+            <input type="text" name="maths" placeholder="Maths" required="required" />
+            <input type="text" name="science" placeholder="Science" required="required" />
+            <input type="text" name="history" placeholder="History" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Button</button>
+        </form>
+        <br>
+        Your Total score is {{score}}
+        <br>
+    </div>
+</body>
+</html>

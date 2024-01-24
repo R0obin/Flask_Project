@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .calculate {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+
+<body>
+    <div class="calculate">
+        <h1>Calculate average marks</h1>
+        <form action="{{ url_for('form')}}" method="post">
+            <input type="text" name="maths" placeholder="Maths" required="required" />
+            <input type="text" name="science" placeholder="Science" required="required" />
+            <input type="text" name="history" placeholder="History" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Button</button>
+        </form>
+        <br>
+        Your Total score is {{score}}
+        <br>
+    </div>
+</body>
+</html>
