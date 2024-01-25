@@ -4,6 +4,11 @@ app = Flask(__name__)
 
 
 
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+
 @app.route('/success/<int:score>')
 def success(score):
     return render_template('submit.html',result=score)
